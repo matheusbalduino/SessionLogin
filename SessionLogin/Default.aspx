@@ -16,7 +16,9 @@
 	<div class="wrapper">
 		<form name="Login_Form" runat="server" class="form-signin">       
 		    <h3 class="form-signin-heading"> Bem Vindo!</h3>
-			
+			<div class="text text-center"> 
+				<asp:Label ID="lblMsg" runat="server" CssClass="text text-info"></asp:Label>
+			</div>
 			  <hr class="colorgraph"/></br>
 			  
 			  <asp:TextBox runat="server" type="text" class="form-control" name="Username" placeholder="Usuário" required="" autofocus=""></asp:TextBox>

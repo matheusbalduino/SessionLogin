@@ -1,5 +1,5 @@
 ﻿.wrapper {
-    margin-top: 80px;
+    margin-top: 250px;
     margin-bottom: 20px;
 }
 
@@ -7,8 +7,21 @@
     max-width: 420px;
     padding: 30px 38px 66px;
     margin: 0 auto;
-    background-color: #eee;
-    border: 3px dotted rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.40);
+    border-radius: 15px;
+    color: white;
+}
+
+body {
+    background-image: url(https://www.freecodecamp.org/news/content/images/size/w2000/2020/04/w-qjCHPZbeXCQ-unsplash.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+#btnLogin {
+    background-color: rgba(0,0,0,0.70);
+    border: none;
+    color: white;
 }
 
 .form-signin-heading {
@@ -24,15 +37,13 @@
 }
 
 input[type="text"] {
-    margin-bottom: 0px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 input[type="password"] {
     margin-bottom: 20px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+   border-radius: 5px;
 }
 
 .colorgraph {

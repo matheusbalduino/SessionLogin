@@ -22,6 +22,7 @@ namespace SessionLogin
             try
             {
                 string usuario = txtUser.Text;
+               
                 string senha = txtPsw.Text;
 
                 // recuperar senha do banco
@@ -30,26 +31,35 @@ namespace SessionLogin
 
                 cmd.CommandText = @"select senha from usuario where login = @usuario";
 
-                cmd.Parameters.AddWithValue("@login", usuario);
+                cmd.Parameters.AddWithValue("@usuario", usuario);
 
                 Conexao.Conectar();
 
-                string senhaEncriptada = Convert.ToString(cmd.ExecuteScalar());// recebe um único dado do banco e passa para a variável
+                string senhaEncriptada = Convert.ToString(cmd.ExecuteScalar()); // recebe um único dado do banco e passa para a variável
 
                 if (string.IsNullOrEmpty(senhaEncriptada)) {
+
                     throw new Exception("Usuário ou Senha Inválido");
+
                 }
+
                 if (BCrypt.Net.BCrypt.Verify(senha, senhaEncriptada)) {
                     
-                    cmd.CommandText = @"select nivel from usuario where login = @login";
+                    cmd.CommandText = @"select  nome, nivel from usuario where login = @login";
                     
                     cmd.Parameters.AddWithValue("@login", usuario);
 
-                    string nivel = Convert.ToString(cmd.ExecuteScalar());
+                    var reader = cmd.ExecuteReader();
+
+                    reader.Read();
+
+                    string nivel = reader.GetString("nivel");
+                    string nome = reader.GetString("nome");
 
                     FormsAuthentication.RedirectFromLoginPage(nivel, false);
 
                     Session["Perfil"] = nivel;
+                    Session["Nome"] = nome;
                 }
                 else
                 {
@@ -57,15 +67,14 @@ namespace SessionLogin
                 }
 
 
-
             }
             catch (Exception ex)
             {
-
+                lblMsg.Text = ex.Message;
             }
             finally
             {
-
+                Conexao.Desconectar();
             }
         }
     }

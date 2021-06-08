@@ -20,6 +20,7 @@ namespace SessionLogin
         {
             string query = @"select id, nome, nivel from usuario";
             DataTable dt = new DataTable();
+
             try
             {
                 MySqlCommand cmd = new MySqlCommand();

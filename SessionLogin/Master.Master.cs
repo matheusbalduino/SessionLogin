@@ -11,6 +11,11 @@ namespace SessionLogin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            txtNome.Text = (string) Session["nome"];
+        }
+
+        protected void btnSair_Click(object sender, EventArgs e)
+        {
 
         }
     }

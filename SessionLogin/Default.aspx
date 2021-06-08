@@ -19,11 +19,12 @@
 			<div class="text text-center"> 
 				<asp:Label ID="lblMsg" runat="server" CssClass="text text-info"></asp:Label>
 			</div>
-			  <hr class="colorgraph"/></br>
+			  <hr class="colorgraph"/><br />
 			  
-			  <asp:TextBox runat="server" type="text" class="form-control" name="Username" placeholder="Usuário" required="" autofocus=""></asp:TextBox>
-			  <asp:TextBox runat="server" type="password" class="form-control" name="Password" placeholder="Senha" required=""></asp:TextBox>     		  
-			  <asp:Button  runat="server" class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" Text="Acessar" ></asp:Button>  			
+			  <asp:TextBox ID="txtUser" runat="server" type="text" class="form-control" name="Username" placeholder="Usuário" required="" autofocus=""></asp:TextBox>
+			  <asp:TextBox ID="txtPsw" runat="server" type="password" class="form-control" name="Password" placeholder="Senha" required=""></asp:TextBox>     		  
+			  <asp:Button ID="btnLogin"  runat="server" class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" Text="Acessar" OnClick="btnLogin_Click" ></asp:Button>  	
+			
 		</form>			
 	</div>
 </div>

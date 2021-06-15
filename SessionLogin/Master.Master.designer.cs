@@ -24,15 +24,6 @@ namespace SessionLogin
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
-        /// Controle btnSair.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSair;
-
-        /// <summary>
         /// Controle txtNome.
         /// </summary>
         /// <remarks>
